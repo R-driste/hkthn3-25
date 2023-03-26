@@ -1,1 +1,52 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<link rel="stylesheet" href="ee.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="c-header">
+    <h1>Chess Gif Creator</h1></header>
+    <br>
+    <form action="https://httpbin.org/get" method="get" id="form1">
+        <fieldset>
+            <legend>Step 1: Copy Paste Your Moves</legend>
+            <p>
+                <label for="Moves">Here:</label>
+                <input type="text" name="chess moves" id="moves link" placeholder="elkfbslefles" autocomplete="on" required
+                    autofocus>
+            </p>
+        </fieldset>
+        <br>
+        <button type="submit" formaction="https://httpbin.org/get"  formmethod="post" onclick="saveFile()">Post</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>        let saveFile = () => {
+        const name = document.getElementById("moves link");
+
+        let data = "\r Name: " + name.value
+
+        // Convert the text to BLOB.
+        const TtoB = new Blob([data], { type: "text/plain" });
+
+        let newLink = document.createElement("a");
+        newLink.download = new Date();
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(TtoB);
+        } else {
+            newLink.href = window.URL.createObjectURL(TtoB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click();
+    };</script>
+
+</body>
+</html>
