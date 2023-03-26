@@ -3,7 +3,7 @@
 from PIL import Image
 import os
 #this is just an example of a photo (jung kook shirtless)
-image1 = Image.open(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1- Copy(2).png")
+image1 = Image.open(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1.png")
 image1.show()
 
 def add_margin(pil_img, bottom,color):
@@ -13,9 +13,15 @@ def add_margin(pil_img, bottom,color):
     result.paste(pil_img)
     return result
 
-
+def caption(img):
+    quote = input("Give a caption to your clip/image! ")
+    height = img.size
+    x =  10
+    y = 30 
+    img.text((x,y), quote)
 
 
 im_new = add_margin(image1, 100,"white")
 im_new.save(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1(2).png", quality=95)
+caption(im_new)
 im_new.show()
