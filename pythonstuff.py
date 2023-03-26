@@ -1,10 +1,9 @@
 #make a function that takes a photo and makes 300 white pixels below it
 #then make a caption in teh 300 pixels
-from PIL import Image
+from PIL import Image, ImageDraw
 import os
 #this is just an example of a photo (jung kook shirtless)
 image1 = Image.open(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1.png")
-image1.show()
 
 def add_margin(pil_img, bottom,color):
     width, height = pil_img.size
@@ -15,13 +14,15 @@ def add_margin(pil_img, bottom,color):
 
 def caption(img):
     quote = input("Give a caption to your clip/image! ")
-    height = img.size
+    wid, height = img.size
     x =  10
-    y = 30 
-    img.text((x,y), quote)
+    y = (int(height)) - 100
+    I1 = ImageDraw.Draw(img)
+    I1.text((x,y), quote, fill=(255, 0, 0))
+    return img
 
 
-im_new = add_margin(image1, 100,"white")
-im_new.save(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1(2).png", quality=95)
-caption(im_new)
-im_new.show()
+im_2 = add_margin(image1, 100,"white")
+im_2.save(r"C:\Users\BRHS-PLTW-09\Documents\Hack\ex1.png", quality=95)
+im3 = caption(im_2)
+im3.show()
