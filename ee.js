@@ -1,0 +1,1 @@
+var formElements = document.forms["form1"].elements["text"].value;
