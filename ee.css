@@ -1,48 +1,46 @@
+body{
+    background-color:#334a4c;
+    font: "Comic Sans";
+}
+p{
+    
 
-  /* Other Non-Flexbox Related Styles */
+} 
+ /* Other Non-Flexbox Related Styles */
   .c-header,
   .c-footer {
     background: #3f8956;
     color: white;
     text-align: center;
-    padding: 2em;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.4em;
+    padding: 1em;
+    font: 'Comic Sans';
+    font-size: 1.8em;
     font-weight: 500;
     line-height: 1.6em;
-    
-    h1, h2, p {
+  }
+
+  .content-dir-item img.mail {
+    display: inline-block;
+    *display: inline; /* for older IE */
+    *zoom: 1; /* for older IE */
+}
+
+form {
       max-width: 40em;
       margin: 0 auto;
-      
-      &:not(:last-child) {
-        margin-bottom: 1em;
-      }
-    }
-    
-    h1 {
-      text-transform: uppercase;
-      font: 'Courier New';
+      text-align: center;
+      color:white;
+      font: 'Comic Sans';
       font-weight: 900;
+      border-width:3px;
     }
-    
-    a {
-      color: #000;
-    }
-  }
-  
-  .c-footer {
-    p {
-      font-weight: 300;
-    }
-  }
   
   * {
     box-sizing: border-box;
+    border-width: 4px;
   }
   
   body {
-    font-family: 'Georgia', Times, serif;
     line-height: 1.6em;
     padding: 0;
     margin: 0;
@@ -70,7 +68,7 @@
     border-bottom: 4px solid #000;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: 'Source Sans Pro', sans-serif;
+    font: 'Comic Sans';
     font-weight: 900;
     letter-spacing: .1em;
     padding: .3em 0;
@@ -94,9 +92,5 @@
       padding-right: .75em;
       color: #fff;
       border-color: #FF521B;
-      
-      &:before {
-        height: 100%;
-      }
     }
-  }
+}

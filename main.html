@@ -9,44 +9,29 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="c-header">
-    <h1>Chess Gif Creator</h1></header>
+    <header class="c-header"><span>
+    <h1>Chess Gif Creator</h1>
+    <img src="phpuTejFE.gif" alt="Chess Gif" style="width:48px;height:48px;display: inline-block;">
+</span>
+</header>
+    <br>
     <br>
     <form action="https://httpbin.org/get" method="get" id="form1">
         <fieldset>
             <legend>Step 1: Copy Paste Your Moves</legend>
             <p>
-                <label for="Moves">Here:</label>
+                <label for="Moves">H e r e:</label>
                 <input type="text" name="chess moves" id="moves link" placeholder="elkfbslefles" autocomplete="on" required
                     autofocus>
             </p>
         </fieldset>
-        <br>
-        <button type="submit" formaction="https://httpbin.org/get"  formmethod="post" onclick="saveFile()">Post</button>
-        <button type="reset">Reset</button>
+        <br><button type="submit" class="c-btn" formaction="https://httpbin.org/get"  formmethod="next">Post</button>
+        <button type="reset" class="c-btn">Reset</button>
     </form>
+    <br>
+    <br>
 
-    <script>        let saveFile = () => {
-        const name = document.getElementById("moves link");
-
-        let data = "\r Name: " + name.value
-
-        // Convert the text to BLOB.
-        const TtoB = new Blob([data], { type: "text/plain" });
-
-        let newLink = document.createElement("a");
-        newLink.download = new Date();
-
-        if (window.webkitURL != null) {
-            newLink.href = window.webkitURL.createObjectURL(TtoB);
-        } else {
-            newLink.href = window.URL.createObjectURL(TtoB);
-            newLink.style.display = "none";
-            document.body.appendChild(newLink);
-        }
-
-        newLink.click();
-    };</script>
+<footer class="c-footer"><p>Bye, Thanks!</p></footer>
 
 </body>
 </html>
