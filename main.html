@@ -13,16 +13,23 @@
             <legend>Step 1: Copy Paste Your Moves</legend>
             <p>
                 <label for="firstName">Here:</label>
-                <input type="text" name="chess moves" id="firstName" placeholder="elkfbslefles" autocomplete="on" required
+                <input type="text" name="chess moves" id="moves1" placeholder="elkfbslefles" autocomplete="on" required
                     autofocus>
             </p>
-           
         </fieldset>
         <br>
         <button type="submit">Submit</button>
-        <button type="submit" formaction="https://httpbin.org/post" formmethod="get">Post</button>
+        <button type="submit" formaction="https://httpbin.org/post" formmethod="post" onclick="saveInfo">Post</button>
         <button type="reset">Reset</button>
     </form>
+
+    <script>
+        let saveFile = () => {
+        const name = document.getElementById("moves1");
+        let data = "\r Info: " + name.value
+        console.log(data);
+            }
+        </script>
 
 
 
